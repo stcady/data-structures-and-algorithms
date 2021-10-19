@@ -1,0 +1,11 @@
+List contents of the bag, destroy the bag, create the bag, version of the bag, compare to another bag, is the bag empty ? full ?, size of bag, add elements to bag, search for item in bag, sort the items in a bag, properties of elements in the bag, can the item be fit into the bag ?, 
+
+Assignment ONE of FOUR
+25 points
+Due Oct 26 2021
+
+A. Define what is meant by Abstract Data Type. Be descriptive in your answer. In your description try to differentiate between Data type, API, Data structures and then describe ADT.
+
+B. During a previous class, we came up with a Bag data type, ie ADT Bag.
+Write a Java / C++ / C / Python / Golang / etc program to implement a Bag.
+Use a Array for implementing the Bag. Pic of the white board items for Bag attached.
