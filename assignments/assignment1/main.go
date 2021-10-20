@@ -1,10 +1,8 @@
 package main
 
-import (
-	bag "data-structures-and-algorithms/assignments/assignment1/bag"
-)
+import "data-structures-and-algorithms/assignments/assignment1/bag"
 
 func main() {
-	var i bag.I = bag.T{S: "hello"}
+	var i bag.Bag = bag.Bag{Name: "hello"}
 	i.M()
 }

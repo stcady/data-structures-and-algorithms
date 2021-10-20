@@ -1,5 +1,5 @@
 package bag
 
-type I interface {
+type BagInterface interface {
 	M()
 }
