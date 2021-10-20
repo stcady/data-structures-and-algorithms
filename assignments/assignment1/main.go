@@ -1,7 +1,7 @@
 package main
 
 import (
-	bag "assignment1/bag"
+	bag "data-structures-and-algorithms/assignments/assignment1/bag"
 )
 
 func main() {
