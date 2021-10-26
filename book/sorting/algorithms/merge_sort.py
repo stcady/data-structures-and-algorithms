@@ -5,20 +5,20 @@
 # Best Case:            O(nlogn)
 # Space Complexity:     O(n)
 
-def MergeSort(arr):
+def merge_sort(arr):
     size = len(arr)
     tempArray = [0] * size
-    mergeSortPartition(arr, tempArray, 0, size - 1)
+    merge_sort_partition(arr, tempArray, 0, size - 1)
 
-def mergeSortPartition(arr, tempArray, lowerIndex, upperIndex):
+def merge_sort_partition(arr, tempArray, lowerIndex, upperIndex):
     #terminating condition
     if lowerIndex >= upperIndex:
         return
     # compute middle index (truncated integer)
     middleIndex = (lowerIndex + upperIndex) // 2
     # recursivley partition left and right of middle index
-    mergeSortPartition(arr, tempArray, lowerIndex, middleIndex)
-    mergeSortPartition(arr, tempArray, middleIndex + 1, upperIndex)
+    merge_sort_partition(arr, tempArray, lowerIndex, middleIndex)
+    merge_sort_partition(arr, tempArray, middleIndex + 1, upperIndex)
     # merge partitions
     merge(arr, tempArray, lowerIndex, middleIndex, upperIndex)
 
@@ -59,7 +59,7 @@ def merge(arr, tempArray, lowerIndex, middleIndex, upperIndex):
 
 def main():
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
-    MergeSort(array)
+    merge_sort(array)
 
 if __name__ == "__main__":
     main()

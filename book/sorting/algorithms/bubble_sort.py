@@ -4,7 +4,7 @@
 # Average Case:         O(n^2)
 # Space Complexity:     O(1)
 
-def BubbleSort(arr):
+def bubble_sort(arr):
     size = len(arr)
     # iterate through array
     for i in range(size - 1):
@@ -23,7 +23,7 @@ def more(value1, value2):
 def main():
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
     print(array)
-    BubbleSort(array)
+    bubble_sort(array)
 
 if __name__ == "__main__":
     main()

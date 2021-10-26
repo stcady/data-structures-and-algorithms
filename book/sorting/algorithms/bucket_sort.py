@@ -4,7 +4,7 @@
 # Average Case:         O(n+k)
 # Space Complexity:     O(k)
 
-def BucketSort(arr, lowerRange, upperRange):
+def bucket_sort(arr, lowerRange, upperRange):
     size = len(arr)
     # set range
     dataRange = upperRange - lowerRange
@@ -24,7 +24,7 @@ def BucketSort(arr, lowerRange, upperRange):
 def main():
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
     print(array)
-    BucketSort(array, 1, 10)
+    bucket_sort(array, 1, 10)
 
 if __name__ == "__main__":
     main()

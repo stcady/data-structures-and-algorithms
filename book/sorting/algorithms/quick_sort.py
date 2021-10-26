@@ -5,12 +5,12 @@
 # Best Case:            O(nlogn)
 # Space Complexity:     O(nlongn)
 
-def QuickSort(arr):
+def quick_sort(arr):
     size = len(arr)
     tempArray = [0] * size
-    quickSortUtil(arr, 0, size - 1)
+    quick_sort_util(arr, 0, size - 1)
 
-def quickSortUtil(arr, lower, upper):
+def quick_sort_util(arr, lower, upper):
     print(arr)
     #terminating condition
     if upper <= lower:
@@ -33,9 +33,9 @@ def quickSortUtil(arr, lower, upper):
     # swap upper element with starting element
     swap(arr, upper, start)
     # recursivley partition on lower half
-    quickSortUtil(arr, start, upper - 1)
+    quick_sort_util(arr, start, upper - 1)
     # recursivley partition on upper half
-    quickSortUtil(arr, upper + 1, stop)
+    quick_sort_util(arr, upper + 1, stop)
 
 def swap(arr, first, second):
     temp = arr[first]
@@ -44,7 +44,7 @@ def swap(arr, first, second):
 
 def main():
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
-    QuickSort(array)
+    quick_sort(array)
 
 if __name__ == "__main__":
     main()

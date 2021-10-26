@@ -5,7 +5,7 @@
 # Best Case:            O(n)
 # Space Complexity:     O(1)
 
-def InsertionSort(arr):
+def insertion_sort(arr):
     size = len(arr)
     i = 1
     # iterate through array
@@ -29,7 +29,7 @@ def more(value1, value2):
 def main():
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
     print(array)
-    InsertionSort(array)
+    insertion_sort(array)
 
 if __name__ == "__main__":
     main()

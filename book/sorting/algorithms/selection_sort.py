@@ -5,7 +5,7 @@
 # Best Case:            O(n^2)
 # Space Complexity:     O(1)
 
-def MaxSelectionSort(arr):
+def max_selection_sort(arr):
     size = len(arr)
     # iterate through array
     for i in range(size - 1):
@@ -20,7 +20,7 @@ def MaxSelectionSort(arr):
         arr[maxIndex] = temp
         print(arr)
 
-def MinSelectionSort(arr):
+def min_selection_sort(arr):
     size = len(arr)
     # iterate through array
     for i in range(size - 1):
@@ -42,11 +42,11 @@ def main():
     print("Max Order...")
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
     print(array)
-    MaxSelectionSort(array)
+    max_selection_sort(array)
     print("Min Order...")
     array = [9, 1, 8, 2, 7, 3, 6, 4, 5]
     print(array)
-    MinSelectionSort(array)
+    min_selection_sort(array)
 
 if __name__ == "__main__":
     main()
