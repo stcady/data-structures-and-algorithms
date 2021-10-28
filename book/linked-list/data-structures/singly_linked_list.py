@@ -31,6 +31,12 @@ class LinkedList(object):
         if self.head == None:
             return True
         return False
+
+    # peek peeks at the first value in the linked list
+    def peek(self):
+        if self.is_empty():
+            raise RuntimeError("EmptyListException")
+        return self.head.value
     
     # add_head inserts new node with the value passed at the head of the list
     def add_head(self, value):
