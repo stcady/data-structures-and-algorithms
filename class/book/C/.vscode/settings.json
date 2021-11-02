@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "deque": "c",
+        "initializer_list": "c",
+        "list": "c",
+        "queue": "c",
+        "stack": "c",
+        "type_traits": "c",
+        "vector": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "xlocale": "c",
+        "system_error": "c",
+        "xfunctional": "c",
+        "xstddef": "c",
+        "xtr1common": "c"
+    }
+}
