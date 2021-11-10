@@ -70,5 +70,5 @@ func main() {
 	fmt.Println("\t", []int{5, 4, 8, 1, 9, 3, 6, 2, 7}, "contains", []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, "? ", SudokuCheck([]int{5, 4, 8, 1, 9, 3, 6, 2, 7}))
 	fmt.Println("\t", []int{5, 4, 8, 1, 9, 9, 6, 2, 7}, "contains", []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, "? ", SudokuCheck([]int{5, 4, 8, 1, 9, 9, 6, 2, 7}))
 	fmt.Println("\t", []int{5, 4, 8, 1, 9, 1, 10, 2, 7}, "contains", []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, "? ", SudokuCheck([]int{5, 4, 8, 1, 9, 1, 10, 2, 7}))
-	fmt.Println("\t", []int{5, 4, 8, 1, 9, 9, 6, 2, 7, 1}, "contains", []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, "? ", SudokuCheck([]int{5, 4, 8, 1, 9, 9, 6, 2, 7, 1}))
+	fmt.Println("\t", []int{5, 4, 8, 1, 9, 3, 6, 2, 7, 1}, "contains", []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, "? ", SudokuCheck([]int{5, 4, 8, 1, 9, 3, 6, 2, 7, 1}))
 }
