@@ -1,0 +1,12 @@
+1. Given any string, determine whether it is a palindrome. Write a function/method
+public boolean isPalin(String string) () which will return true if the string is a palindrome.
+
+2. Write a method/function using recursion to convert int M in decimal to radix N.
+String Conversion(int M, int N) ; // return string, accept two integers
+
+For example
+String abc = Conversion(256, 16); // will be 100
+String cbs = Converstion(256, 2); // binary representation of 256.
+
+3. Given a array of nine digits determine whether they are 1 2 3 4 5 6 7 8 9.
+Feel free to use API if needed.
