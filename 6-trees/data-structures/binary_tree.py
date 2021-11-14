@@ -1,4 +1,5 @@
 from collections import deque
+from sys import tracebacklimit
 
 class Tree(object):
 
@@ -210,3 +211,277 @@ class Tree(object):
              return 0
          else:
              return (1 + self.num_nodes_util(curr.right_child) + self.num_nodes_util(curr.left_child))
+         
+    # sum_all_nodes finds the sum of values of all nodes in a binary tree
+    def sum_all_nodes(self):
+        return self.sum_all_nodes_util(self.root)
+    
+    
+    # sum_all_nodes_util sums the nodes via recursion
+    def sum_all_nodes_util(self, curr):
+        if curr == None:
+            return 0
+        right_sum = self.sum_all_nodes_util(curr.right_child)
+        left_sum = self.sum_all_nodes_util(curr.left_child)
+        finalsum = right_sum + left_sum + curr.value
+        return finalsum
+    
+    # num_leaf_nodes finds the number of leaf nodes in a binary tree
+    def num_leaf_nodes(self):
+        return self.num_leaf_nodes_util(self.root)
+    
+    # num_leaf_nodes_util finds the number of leaf nodes recursivley
+    def num_leaf_nodes_util(self, curr):
+        if curr == None:
+            return 0
+        if curr.left_child == None and curr.right_child == None:
+            return 1
+        else:
+            return (self.num_leaf_nodes_util(curr.right_child) + self.num_leaf_nodes_util(curr.left_child))
+        
+    # num_full_nodes finds the number of full nodes in a binary tree
+    def num_full_nodes(self):
+        return self.num_full_nodes_util(self.root)
+    
+    # num_full_nodes_util finds the number of full nodes via recursion
+    def num_full_nodes_util(self, curr):
+        if curr == None:
+            return 0
+        count = self.num_leaf_nodes_util(curr.right_child) + self.num_leaf_nodes_util(curr.left_child)
+        if curr.left_child != None and curr.right_child != None:
+            count += 1
+        return count
+    
+    # search_tree searches for a particular value in the binary tree
+    def search_tree(self, root, value):
+        if root == None:
+            return False
+        if root.value == value:
+            return True
+        left = self.search_tree(root.left_child, value)
+        if left:
+            return True
+        right = self.search_tree(root.right_child, value)
+        if right:
+            return True
+        return False
+    
+    # find_max finds the maximum value in a binary tree
+    def find_max(self):
+        ans = self.find_max_util(self.root)
+        return ans
+    
+    # find_max_util finds the maximum value via recursion
+    def find_max_util(self, curr):
+        if curr == None:
+            return None
+        maxval = curr.value
+        left = self.find_max_util(curr.left_child)
+        right = self.find_max_util(curr.right_child)
+        if left > maxval:
+            maxval = left
+        if right > maxval:
+            maxval = right
+        return maxval
+    
+    # tree_depth finds the depth of a binary tree
+    def tree_depth(self):
+        return self.tree_depth_util(self.root)
+    
+    # tree_depth_util finds the depth via recursion
+    def tree_depth_util(self, root):
+        if root == None:
+            return 0
+        else:
+            left_depth = self.tree_depth_util(root.left_child)
+            right_depth = self.tree_depth_util(root.right_child)
+            if left_depth > right_depth:
+                return left_depth + 1
+            else:
+                return right_depth + 1
+            
+    # max_length_path finds the maximum length path in a binary tree
+    def max_length_path(self):
+        return self.max_length_path(self, self.root)
+    
+    # max_length_path_util finds the maximum length path via recursion
+    def max_length_path_util(self, curr):
+        if curr == None:
+            return 0
+        left_path = self.max_length_path_util(curr.left_child)
+        right_path = self.max_length_path_util(curr.right_child)
+        maxpath = left_path + right_path + 1
+        left_max = self.max_length_path_util(curr.left_child)
+        right_max = self.max_length_path_util(curr.right_child)
+        if left_max > maxpath:
+            maxpath = left_max
+        if right_max > maxpath:
+            maxpath = right_max
+        return maxpath
+    
+    # is_equal determines if two trees are equal
+    def is_equal(self, T2):
+        return self.is_equal_util(self.root, T2.root)
+
+    # is_equal_util determines if two trees are equal via recursion
+    def is_equal_util(self, node1, node2):
+        if node1 == None and node2 == None:
+            return True
+        elif node1 == None or node2 == None:
+            return False
+        else:
+            return (self.is_equal_util(node1.left_child, node2.left_child) and self.is_equal_util(node1.right_child, node2.right_child) and (node1.value == node2.value))
+    
+    # copy_tree copies the values to another binary tree
+    def copy_tree(self):
+        tree2 = Tree()
+        tree2.root = self.copy_tree_util(self.root)
+        return tree2
+
+    # copy_tree_util copies the values to another binary tree via recursion
+    def copy_tree_util(self, curr):
+        if curr != None:
+            temp = self.Node(curr.value)
+            temp.left = self.copy_tree_util(curr.left_child)
+            temp.right = self.copy_tree_util(curr.right_child)
+            return temp
+        else:
+            return None
+    
+    # copy_mirror_tree copies the values to another binary tree as a mirror image
+    def copy_mirror_tree(self):
+        tree2 = Tree()
+        tree2.root = self.copy_mirror_tree_util(self.root)
+        return tree2
+
+    # copy_mirror_tree_util copies the values to another binary tree as a mirror image via recursion
+    def copy_mirror_tree_util(self, curr):
+        if curr != None:
+            temp = self.Node(curr.value)
+            temp.right = self.copy_mirror_tree_util(curr.left_child)
+            temp.left = self.copy_mirror_tree_util(curr.right_child)
+            return temp
+        else:
+            return None
+        
+    # free_tree frees all nodes in the tree
+    def free(self):
+        self.root = None
+        
+    # find_count 
+    def find_count(self):
+        return self.find_count_util(self.root)
+    
+    # find_count_util
+    def find_count_util(self, curr):
+        if curr == None:
+            return 0
+        return (1 + self.find_count_util(curr.left) + self.find_count_util(curr.right))
+        
+    # is_complete_tree determines if the tree is complete
+    def is_complete_tree(self):
+        count = self.find_count()
+        return self.is_complete_tree_util(self.root, 0, count)
+        
+    # is_complete_tree_util determines if the tree is complete via recursion
+    def is_complete_tree_util(self, curr, index, count):
+        if curr == None:
+            return True
+        if index > count:
+            return False 
+        return self.is_complete_tree_util(curr.left, index*2+1, count) and self.is_complete_tree_util(curr.right, index*2+2, count)
+
+    # is_heap determines if the tree is a heap
+    def is_heap(self):
+        return self.is_complete_tree() and self.is_heap_util(self.root, None)
+    
+    # is_heap_util determines if the tree is a heap via recursion
+    def is_heap_util(self, curr, parent_value):
+        if curr == None:
+            return True
+        if curr.value < parent_value:
+            return False
+        return (self.is_heap_util(curr.left, curr.value) and self.is_heap_util(curr.right, curr.value))
+    
+    # iterative_preorder performs preorder traversal without recursion
+    def iterative_preorder(self):
+        stk = []
+        if self.root != None:
+            stk.append(self.root)
+        while len(stk) != 0:
+            curr = stk.pop()
+            print(curr.value, end=' ')
+            if curr.right_child != None:
+                stk.append(curr.right_child)
+            if curr.left_child != None:
+                stk.append(curr.left_child)
+                
+    # iterative_postorder performs postorder traversal without recursion
+    def iterative_postorder(self):
+        stk = []
+        visited = []
+        if self.root != None:
+            stk.append(self.root)
+            visited.append(0)
+        while len(stk) != 0:
+            curr = stk.pop()
+            vtd = visited.pop()
+            if vtd == 1:
+                print(curr.value, end=' ')
+            else:
+                stk.append(curr)
+                visited.append(1)
+                if curr.right_child != None:
+                    stk.append(curr.right_child)
+                    visited.append(0)
+                if curr.left_child != None:
+                    stk.append(curr.left_child)
+                    visited.append(0)
+        
+    # iterative_inorder performs inorder traversal without recursion
+    def iterative_inorder(self):
+        stk = []
+        visited = []
+        if self.root != None:
+            stk.append(self.root)
+            visited.append(0)
+        while len(stk) != 0:
+            curr = stk.pop()
+            vtd = visited.pop()
+            if vtd == 1:
+                print(curr.value, end=' ')
+            else:
+                if curr.right != None:
+                    stk.append(curr.right)
+                    visited.append(0)
+                stk.append(curr)
+                visited.append(1)
+                if curr.left != None:
+                    stk.append(curr.left)
+                    visited.append(0)
+                    
+    # tree2list creates a doubly linked list from a binary tree via inorder traversal
+    def tree2list(self, curr):
+        if curr == None:
+            return None
+        if curr.left_child == None and curr.right_child == None:
+            curr.left_child == curr
+            curr.right_child == curr
+            return curr
+        if curr.left_child != None:
+            head = self.tree2list(curr.left_child)
+            tail = head.left_child
+            curr.left_child = tail
+            tail.right_child = curr
+        else:
+            head = curr
+        if curr.right_child != None:
+            temp_head = self.tree2list(curr.right_child)
+            tail = temp_head.left_child
+            curr.right_child = temp_head
+            temp_head.left_child = curr
+        else:
+            tail = curr
+        head.left_child = tail
+        tail.right_child = head
+        return head
