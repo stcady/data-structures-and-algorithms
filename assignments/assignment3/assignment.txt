@@ -1,0 +1,8 @@
+Question ONE:
+Describe Insertion Sort algorithm, Provide a implementation in language of your choice to sort an array of upper case alphabets.  
+
+Question TWO:
+Describe the data structure HashMap.  You are free to use language of your choice to demo a HashMap. Feel free to use API if needed. 
+
+Question THREE:
+Describe the data structure Deque. No implementation required. 
