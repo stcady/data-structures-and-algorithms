@@ -30,8 +30,18 @@
 ### Deque Queue
 
 ## 6. Trees
+### Binary Tree
+### Binary Search Tree
+### Segment Tree
+### AVL Tree
+### Red-Black Tree
+### Splay Tree
+### B-Tree
+### B+ Tree
+### B* Tree
 
 ## 7. Heap / Priority Queue
+### Binary Heap
 
 ## 8. Hash Map
 
