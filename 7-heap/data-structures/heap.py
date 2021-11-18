@@ -30,15 +30,15 @@ class Heap(object):
     def remove(self):
         if self.size == 0:
             raise RuntimeError("EmptyHeap")
-        value = self.arr[1]
-        self.arr[0] = self.arr[self.size-1]
+        value = self.arr[0]
+        self.arr[0] = self.arr[self.size - 1]
+        self.percolate_down(0)
         self.size -= 1
-        self.percolate_down(1)
         return value
     
     # print_heap prints the contents of the priority queue
     def print_heap(self):
-        print(self.arr[1:])
+        print(self.arr)
     
     # is_empty checks if the priority queue is empty
     def is_empty(self):
@@ -77,12 +77,24 @@ class Heap(object):
             self.arr[child] = self.arr[parent]
             self.arr[parent] = temp
             self.percolate_up(parent)
+
+def heap_sort(array):
+    hp = Heap(array)
+    i = 0
+    while i < len(array):
+        array[i] = hp.remove()
+        i += 1    
+    return array        
             
 def main():
     a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3]
     hp = Heap(True, a)
     hp.print_heap()
-    print(hp.remove(), end=' ')
+    print(hp.remove())
+    hp.print_heap()
+    print(a)
+    b = heap_sort(a)
+    print(b)
     
 if __name__ == "__main__":
     main()
