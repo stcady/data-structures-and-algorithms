@@ -79,12 +79,13 @@ class Heap(object):
             self.percolate_up(parent)
 
 def heap_sort(array):
-    hp = Heap(array)
+    hp = Heap(False, array)
     i = 0
-    while i < len(array):
-        array[i] = hp.remove()
-        i += 1    
-    return array        
+    size = len(array)
+    while i < size:
+        array[size - i -1] = hp.remove()
+        i += 1   
+    return array  
             
 def main():
     a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3]
