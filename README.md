@@ -43,7 +43,9 @@
 ## 7. Heap / Priority Queue
 ### Binary Heap
 
-## 8. Hash Map
+## 8. Hash Table
+### Linear Probing
+### Separate Chaining
 
 ## 9. Graphs
 
