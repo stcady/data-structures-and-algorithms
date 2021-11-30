@@ -1,13 +1,39 @@
 Question ONE:
 Describe Insertion Sort algorithm, Provide a implementation in language of your choice to sort an array of upper case alphabets.
-    The Insertion Sort algorithm works by using a set of nested loops. The outer loop is used to pick each value incrementally in the array and save is as a temporary variable.
+The Insertion Sort algorithm works by using a set of nested loops. The outer loop is used to pick each value incrementally in the array and save is as a temporary variable.
 The inner loop is used to iterate through subsequent subarray and compare the current value with the previous values. The elements in the array are shifted to the right until
 the comparison no longer holds true. The inner loop is then exited and the saved insertion value is inserted into the proper position. This process is repeted until the outer
-loop has iterated through all elements in the array. The insertion sort algorithm is not a very efficient algorithm when it comes to time complexity, but it is quite efficient in space complexity as it only needs to store
-the current element to be inserted. The algorithms worst case runtime complexity is O(n^2) and the space complexity is O(1).
+loop has iterated through all elements in the array. The insertion sort algorithm is not a very efficient algorithm when it comes to time complexity, but it is quite efficient 
+in space complexity as it only needs to store the current element to be inserted. The algorithms worst case runtime complexity is O(n^2) and the space complexity is O(1).
+
+The implementation of the algorithm can be run as follows:
+    `go run main.go insertionSort.go`
+    `go build main.go insertionSort.go && ./main`
+See "Problem 1".
 
 Question TWO:
-Describe the data structure HashMap.  You are free to use language of your choice to demo a HashMap. Feel free to use API if needed. 
+Describe the data structure HashMap.  You are free to use language of your choice to demo a HashMap. Feel free to use API if needed.
+The Hash-Map data structure is a type of data structure that maps key-value sets and it uses a hash function to calculate an index of an array. A Hash-Map stores data by first creating
+an array of a specified size, and this size will be used in the hash-function (modulo operation) for each insertion. When inserting data the hash-function is applied to the value to then result in the
+index of the table where the data is to be stored. Then the array at that computed index is set to the desired value. The data that is used in the hash-function can be the key in the key-value pair, or it
+can be the value in both cases. A Hash-Map searches/removes data by again passing the key through the hash-function to get the index location of the value. Then the value at that computed index
+in the array is either returned or removed depedning on the find or delete operation. In some cases when inserting new data into the Hash-Map a collision occurs where the index resulting from the hash-function
+is already in use. In order to resolve the collisions Hash-Map implementations either use a probing method or chaining method. Linear probing works in that, when an collision occurs, the next index that is checked is incremented
+by a constant number (say i+1) until there is an available slot. Quadratic probing works in that, when an collision occurs, the next index that is checked is power factor of the current index (say i*i) until there is an available slot.
+In the case of finding and/or deleting a value from the Hash-Map the index is again computed as a result of the hash-function and the probing process is iterated until the value is found. On the other hand, chaining resolves Hash-Map
+collisions by creating an array of linked-lists such that when multiple values are inserted at the same index it is added to the linked-list at that index. Thus, when finding or deleting a value the
+index is computed from the hash-function and then the linked-list at that index is traversed until the value is found where it is then returned or deleted. The Hash-Map data structure is a very efficient data
+structure in that is has a runtime complexity of O(1) and a space complexity of O(n)./insertionSort
+
+The implementation of the data structure using Golang maps can be run as follows:
+    `go run main.go insertionSort.go`
+    `go build main.go insertionSort.go && ./main`
+See "Problem 2".
 
 Question THREE:
-Describe the data structure Deque. No implementation required. 
+Describe the data structure Deque. No implementation required.
+The Deque data structure, also know as "double-ended queue", is an ordered collection of items that has both the features of a Stack and a Queue. It supports both LIFO (last in first out)
+and FIFO (first in first out) ordering of the data. This ordering is supported by the Deque methods in being able to insert and pop elements on both the front and back sides of the list.
+This makes the data structure unrestrictive and forces the developer to manage the consistent use of the add and remove operations. The data structure is quite versitile in that it is a single
+structure that can be used as either a Stack, a Queue, or both (as a Deque). The data structure is quite efficient in that it has a runtime complexity of O(1) when adding/removing elements, and
+that is has a space complexity of O(n).
