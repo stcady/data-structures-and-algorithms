@@ -9,6 +9,8 @@ in space complexity as it only needs to store the current element to be inserted
 The implementation of the algorithm can be run as follows:
     `go run main.go insertionSort.go`
     `go build main.go insertionSort.go && ./main`
+Or just run the provided binary:
+    `./assignment3`
 See "Problem 1".
 
 Question TWO:
@@ -28,6 +30,8 @@ structure in that is has a runtime complexity of O(1) and a space complexity of 
 The implementation of the data structure using Golang maps can be run as follows:
     `go run main.go insertionSort.go`
     `go build main.go insertionSort.go && ./main`
+Or just run the provided binary:
+    `./assignment3`
 See "Problem 2".
 
 Question THREE:
