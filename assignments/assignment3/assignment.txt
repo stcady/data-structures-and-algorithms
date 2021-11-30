@@ -1,5 +1,6 @@
 Question ONE:
 Describe Insertion Sort algorithm, Provide a implementation in language of your choice to sort an array of upper case alphabets.
+
 The Insertion Sort algorithm works by using a set of nested loops. The outer loop is used to pick each value incrementally in the array and save is as a temporary variable.
 The inner loop is used to iterate through subsequent subarray and compare the current value with the previous values. The elements in the array are shifted to the right until
 the comparison no longer holds true. The inner loop is then exited and the saved insertion value is inserted into the proper position. This process is repeted until the outer
@@ -15,6 +16,7 @@ See "Problem 1".
 
 Question TWO:
 Describe the data structure HashMap.  You are free to use language of your choice to demo a HashMap. Feel free to use API if needed.
+
 The Hash-Map data structure is a type of data structure that maps key-value sets and it uses a hash function to calculate an index of an array. A Hash-Map stores data by first creating
 an array of a specified size, and this size will be used in the hash-function (modulo operation) for each insertion. When inserting data the hash-function is applied to the value to then result in the
 index of the table where the data is to be stored. Then the array at that computed index is set to the desired value. The data that is used in the hash-function can be the key in the key-value pair, or it
@@ -36,6 +38,7 @@ See "Problem 2".
 
 Question THREE:
 Describe the data structure Deque. No implementation required.
+
 The Deque data structure, also know as "double-ended queue", is an ordered collection of items that has both the features of a Stack and a Queue. It supports both LIFO (last in first out)
 and FIFO (first in first out) ordering of the data. This ordering is supported by the Deque methods in being able to insert and pop elements on both the front and back sides of the list.
 This makes the data structure unrestrictive and forces the developer to manage the consistent use of the add and remove operations. The data structure is quite versitile in that it is a single
