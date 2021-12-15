@@ -18,10 +18,14 @@ def main():
     gph.add_undirected_edge("Atlanta", "Miami", 1)
     gph.add_undirected_edge("Detroit", "Cleveland", 1)
 
+    print("________________________________________________________________")
     previous_nodes, shortest_path = gph.dijkstra_algorithm("San Francisco")
+    print("________________________________________________________________")
     print(previous_nodes)
     print(shortest_path)
+    print("________________________________________________________________")
     gph.print_dijkstra_result(previous_nodes, shortest_path, "San Francisco", "New York")
+    print("________________________________________________________________")
 
     
     #gph.print_dijkstra_result(previous_nodes, shortest_path, "San Francisco", "Atlanta")

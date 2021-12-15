@@ -40,16 +40,25 @@ class Graph(object):
         node_weights = defaultdict(lambda: float('inf'))
         node_weights[start_node] = 0
         heap.heappush(pq, (0, start_node))
+        iter = 1
         while len(pq) != 0:
             # go greedily by always extending the shorter cost nodes first
             (_, node) = heap.heappop(pq)
             visited.add(node)
+            print("Iteration ", iter)
+            print(pq)
+            print(visited)
+            print(node_weights)
+            print(previous)
+            print(visited)
+            print()
             for destination, weight in self.adj[node].items():
                 new_weight = node_weights[node] + weight
                 if node_weights[destination] > new_weight and destination not in visited:
                     previous[destination] = node
                     node_weights[destination] = new_weight
                     heap.heappush(pq, (new_weight, destination))
+            iter+=1
         return previous, node_weights
 
     def print_dijkstra_result(self, previous, shortest_path, start_node, end_node):
@@ -58,9 +67,7 @@ class Graph(object):
         while node != start_node:
             path.append(node)
             node = previous[node]
-            print(path)
         # Add start node
         path.append(start_node)
-        print(path)
         print("Shortest path: {}.".format(shortest_path[end_node]))
         print(" -> ".join(reversed(path)))
